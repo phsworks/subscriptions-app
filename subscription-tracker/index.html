@@ -1,13 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="src/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subscriptions-tracker</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>Subscriptions</h1>
+    <div class="add-subscription-section">
+      <h2>Add a Subscription</h2>
+      <form class="subscription-form">
+
+        <input placeholder="name subscription" type="text" required>
+        <input required placeholder="price in euros" type="number">
+        <select required="billing_cycle" id="">
+          <option value="Monthly">Monthly Subscription</option>
+          <option value="Yearly">Yearly Subscription</option>
+        </select>
+        <textarea placeholder="notes" name="notes" id=""></textarea>
+        <button type="submit">Add Subscription</button>
+      </form>
+
+    </div>
+
+
+    <h2>Your subscriptions</h2>
+    <div id="subscription-list">
+
+    </div>
+  </div>
+
+
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
