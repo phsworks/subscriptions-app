@@ -37,7 +37,7 @@ h1 {
   padding: 15px;
 }
 
-.subscription-form {
+#subscription-form {
   display: flex;
   justify-content: center;
   align-items: center;
