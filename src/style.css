@@ -45,7 +45,7 @@ h1 {
   position: relative;
   gap: 20px;
 
-  input {
+  :is(input) {
     width: 250px;
     background-color: #203149;
     color: white;
