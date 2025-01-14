@@ -6,6 +6,7 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+
 // function to show all subscriptions
 async function loadSubscriptions() {
   const { data, error } = await supabase
@@ -45,7 +46,6 @@ form.addEventListener("submit", async (event) => {
 
   const { error, data } = await supabase.from("subscriptions").insert([newSub]);
 
-  console.log({ error, data });
 
   if (error) {
     alert("There was an error please try again");
