@@ -1,6 +1,4 @@
-import "./style.css";
-import supabase from "./supabase/config";
-
+import { supabase } from "./supabase/config";
 
 // function to show all subscriptions
 async function loadSubscriptions() {
@@ -41,36 +39,30 @@ form.addEventListener("submit", async (event) => {
 
   const { error, data } = await supabase.from("subscriptions").insert([newSub]);
 
-
   if (error) {
     alert("There was an error please try again");
   } else {
     alert("Your subscription is added");
-    window.location.reload()
   }
 });
 
-async function deleteItem(id){
-  const {error} = await supabase
-    .from('subscriptions')
-    .delete()
-    .eq("id", id);
+async function deleteItem(id) {
+  const { error } = await supabase.from("subscriptions").delete().eq("id", id);
 
-    if (error){
-      console.log("Error deleting item", error.message);
-    } else {
-      console.log("Item deleted succesfully");
-      document.querySelector(`.item[data-id="${id}"]`).remove();
-    }
+  if (error) {
+    console.log("Error deleting item", error.message);
+  } else {
+    console.log("Item deleted succesfully");
+    document.querySelector(`.item[data-id="${id}"]`).remove();
+  }
 }
 
 // function to delete subscriptions
 document.addEventListener("click", (event) => {
-  if (event.target.classList.contains('delete-btn')) {
-    const itemId = event.target.getAttribute('data-id');
-    deleteItem(itemId)
-
+  if (event.target.classList.contains("delete-btn")) {
+    const itemId = event.target.getAttribute("data-id");
+    deleteItem(itemId);
   }
-})
+});
 
 loadSubscriptions();
