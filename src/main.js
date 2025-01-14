@@ -1,5 +1,5 @@
 import "./style.css";
-import { createClient } from "@supabase/supabase-js";
+import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
@@ -74,7 +74,7 @@ document.addEventListener("click", (event) => {
   if (event.target.classList.contains('delete-btn')) {
     const itemId = event.target.getAttribute('data-id');
     deleteItem(itemId)
-    
+
   }
 })
 
