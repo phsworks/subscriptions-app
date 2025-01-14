@@ -1,5 +1,5 @@
 import "./style.css";
-import { createClient } from "../package.json/@supabase/supabase-js";
+import { createClient } from "../node_modules/@supabase/supabase-js/dist/main/SupabaseClient";
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
