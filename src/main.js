@@ -1,5 +1,5 @@
-import { supabase } from "./supabase/config";
-
+import { supabase } from "/src/supabase/config";
+console.log(config.js)
 // function to show all subscriptions
 async function loadSubscriptions() {
   const { data, error } = await supabase
