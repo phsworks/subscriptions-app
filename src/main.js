@@ -1,4 +1,4 @@
-import { supabase } from "../src/supabase/config";
+import { supabase } from "./supabase/config";
 
 // function to show all subscriptions
 async function loadSubscriptions() {
