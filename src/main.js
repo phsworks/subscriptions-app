@@ -15,7 +15,7 @@ async function loadSubscriptions() {
 
     data.forEach((sub) => {
       const item = document.createElement("div");
-      item.innerHTML = `<li class="item"> <span class="subscription-name">${sub.name} </span>  ${sub.price} ${sub.billing_cycle} ${sub.start_date} ${sub.notes} <button class="delete-btn" data-id="${sub.id}">X</button> </li>`;
+      item.innerHTML = `<li class="item">  ${sub.name} <br> ${sub.billing_cycle}  <span class= "price-date"> € ${sub.price} <br> ${sub.start_date} </span> <button class="delete-btn" data-id="${sub.id}">X</button> </li>`;
       list.appendChild(item);
     });
   }
@@ -43,6 +43,7 @@ form.addEventListener("submit", async (event) => {
     alert("There was an error please try again");
   } else {
     alert("Your subscription is added");
+    window.location.reload();
   }
 });
 
@@ -54,14 +55,15 @@ async function deleteItem(id) {
   } else {
     console.log("Item deleted succesfully");
     document.querySelector(`.item[data-id="${id}"]`).remove();
+
   }
 }
 
-// function to delete subscriptions
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("delete-btn")) {
     const itemId = event.target.getAttribute("data-id");
     deleteItem(itemId);
+    window.location.reload();
   }
 });
 
