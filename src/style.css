@@ -4,6 +4,7 @@
   font-weight: 400;
   color: white;
   background-color: #0f2132;
+  overflow-x: hidden;
 }
 
 body {
@@ -61,21 +62,24 @@ h1 {
     width: 280px;
     background-color: #203149;
     color: white;
-    border: none;
+    border: 1px solid rgb(147, 147, 147);
     padding: 15px;
     border-radius: 5px;
+    font-size: 1.0rem;
   }
 
   ::placeholder {
     color: white;
   }
-  :is(select) {
+  select {
     width: 310px;
     background-color: #203149;
+    border: 1px solid rgb(147, 147, 147);
     color: white;
     border: none;
-    padding: 30px;
+    padding: 15px;
     border-radius: 5px;
+    font-size: 1.0rem;
   }
 }
 
