@@ -11,14 +11,22 @@ async function loadSubscriptions() {
     console.error("Error loading subscription", error);
   } else {
     const list = document.getElementById("subscription-list");
+    const totalDisplay = document.getElementById("total-amount")
     list.innerHTML = "";
 
+    let total = 0;
+
     data.forEach((sub) => {
+      total += parseFloat(sub.price);
+
       const item = document.createElement("div");
       item.innerHTML = `<li class="item">  ${sub.name} <br> ${sub.billing_cycle}  <span class= "price-date"> € ${sub.price} <br> ${sub.start_date} </span> <button class="delete-btn" data-id="${sub.id}">X</button> </li>`;
       list.appendChild(item);
     });
   }
+
+  totalDisplay.innerText = `Total: € {total.tofixed(2)}`
+
 }
 
 // function to add subscriptions
@@ -55,7 +63,6 @@ async function deleteItem(id) {
   } else {
     console.log("Item deleted succesfully");
     document.querySelector(`.item[data-id="${id}"]`).remove();
-
   }
 }
 
@@ -65,5 +72,8 @@ document.addEventListener("click", (event) => {
     deleteItem(itemId);
   }
 });
+
+
+
 
 loadSubscriptions();
