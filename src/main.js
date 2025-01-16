@@ -63,7 +63,6 @@ document.addEventListener("click", (event) => {
   if (event.target.classList.contains("delete-btn")) {
     const itemId = event.target.getAttribute("data-id");
     deleteItem(itemId);
-    window.location.reload();
   }
 });
 
