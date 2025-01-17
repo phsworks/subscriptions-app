@@ -11,21 +11,35 @@ async function loadSubscriptions() {
     console.error("Error loading subscription", error);
   } else {
     const list = document.getElementById("subscription-list");
+    const totalMonthlyDisplay = document.getElementById("total-amount-monthly")
+    const totalYearlyDisplay = document.getElementById("total-amount-yearly")
     const totalDisplay = document.getElementById("total-amount")
     list.innerHTML = "";
 
+    let totalMonthly = 0;
+    let totalYearly = 0;
     let total = 0;
 
     data.forEach((sub) => {
+
+      if (sub.billing_cycle === "Monthly") {
+        totalMonthly += parseFloat(sub.price);
+      }
+      if (sub.billing_cycle === "Yearly") {
+        totalYearly += parseFloat(sub.price);
+      }
+
       total += parseFloat(sub.price);
 
+
       const item = document.createElement("div");
-      item.innerHTML = `<li class="item">  ${sub.name} <br> ${sub.billing_cycle}  <span class= "price-date"> € ${sub.price} <br> ${sub.start_date} </span> <button class="delete-btn" data-id="${sub.id}">X</button> </li>`;
+      item.innerHTML = `<li class="item"> <span class="sub-intro"> ${sub.name} <br> ${sub.billing_cycle}  </span> <span class= "price-date"> € ${sub.price} <br> ${sub.start_date} </span> <button class="delete-btn" data-id="${sub.id}">X</button> </li>`;
       list.appendChild(item);
     });
+    totalMonthlyDisplay.innerHTML = ` <span class="total"> Total Monthly </span>  <span> € ${totalMonthly.toFixed(2)} </span>`
+    totalYearlyDisplay.innerHTML = ` <span class="total"> Total Yearly </span> <span> € ${totalYearly.toFixed(2)} </span>`
+    totalDisplay.innerHTML = ` <span class="total"> Total </span> <span> € ${total.toFixed(2)} </span>`
   }
-
-  totalDisplay.innerText = `Total: € {total.tofixed(2)}`
 
 }
 
