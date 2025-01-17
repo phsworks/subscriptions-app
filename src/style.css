@@ -34,16 +34,15 @@ h1 {
 }
 
 .add-subscription-section {
-  background-color: #0a2c4b;
+  background-color: #0f3961;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 340px;
+  width: 310px;
   margin: 0 auto;
   border-radius: 10px;
   padding: 15px;
-  box-shadow: rgba(64, 64, 71, 0.2) 0px 7px 29px 0px;
 
   h2 {
     font-size: 1.8rem;
@@ -62,13 +61,13 @@ h1 {
 
   :is(input) {
     width: 280px;
-    background-color: #203149;
+    height: 40px;
+    background-color: #324b6d;
     color: white;
     padding: 15px;
     border-radius: 5px;
-    font-size: 1.0rem;
+    font-size: 1rem;
     border: none;
-
   }
 
   ::placeholder {
@@ -76,12 +75,13 @@ h1 {
   }
   select {
     width: 310px;
-    background-color: #203149;
+    height: 60px;
+    background-color: #324b6d;
     color: white;
     border: none;
     padding: 15px;
     border-radius: 5px;
-    font-size: 1.0rem;
+    font-size: 1rem;
   }
 }
 
@@ -105,7 +105,7 @@ button:hover {
   flex-direction: column;
   background-color: #0f3961;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  width: 370px;
+  width: 350px;
   margin-top: 30px;
 }
 
@@ -118,10 +118,9 @@ button:hover {
   font-size: 15px;
   border-bottom: 1px solid rgb(218, 217, 217);
 
-
   .price-date {
     width: 110px;
-  };
+  }
   .sub-intro {
     width: 90px;
   }
@@ -133,23 +132,20 @@ button:hover {
   width: 20px;
 }
 
-
-
 .delete-btn:hover {
   transform: scale(1.04);
   background-color: transparent;
 }
 
-
-
-#total-amount-yearly, #total-amount-monthly, #total-amount {
-  width: 355px;
-  background-color: #1e8689;
+#total-amount-yearly,
+#total-amount-monthly,
+#total-amount {
+  width: 335px;
+  background-color: #152d43;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 8px;
-
 }
 
 @media (min-width > 650px) and (max-width: 1023px) {
@@ -157,11 +153,33 @@ button:hover {
     flex-direction: row;
     gap: 70px;
     align-items: flex-start;
+  }
 
+  .add-subscription-section {
+    width: 300px;
   }
 
   #subscription-list {
-    width: 50vw;
+    width: 30vw;
+    margin-top: 0;
+  }
+
+  .item {
+    padding: 20px;
+
+    .price-date {
+      width: 150px;
+    }
+    .sub-intro {
+      width: 140px;
+    }
+  }
+
+  #total-amount-yearly,
+  #total-amount-monthly,
+  #total-amount {
+    width: 43.5vw;
+    padding: 15px;
   }
 }
 
@@ -172,7 +190,30 @@ button:hover {
     align-items: flex-start;
   }
 
+  .add-subscription-section {
+    width: 400px;
+  }
+
   #subscription-list {
     width: 50vw;
+    margin-top: 0;
+  }
+
+  .item {
+    padding: 20px;
+
+    .price-date {
+      width: 150px;
+    }
+    .sub-intro {
+      width: 140px;
+    }
+  }
+
+  #total-amount-yearly,
+  #total-amount-monthly,
+  #total-amount {
+    width: 47.8vw;
+    padding: 15px;
   }
 }
